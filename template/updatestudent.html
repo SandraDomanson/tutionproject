@@ -1,0 +1,131 @@
+{% extends 'basetutor.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 mt-5">
+      <div class="col-md-12 mt-3">
+        <center>
+          <h2>Update Branch Details</h2>
+        </center>
+      </div>
+      <div class="card p-3">
+        <form
+          action="/updatestudent/{{s.sid}}"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <label for="">Students Name</label>
+              <input
+                type="text"
+                name="studentname"
+                value="{{s.studentname}}"
+                class="form-control"
+              />
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for=""> Phone Number </label>
+                <input
+                  type="number"
+                  name="phn"
+                  value="{{s.phn}}"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-md-12 mt-3">
+                <label for=""> Class </label>
+                <input
+                  type="text"
+                  name="class"
+                  value="{{s.class}}"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-md-12 mt-3">
+                <label for=""> Subjects </label>
+                {% for i in sub %}
+                <input type="checkbox" name="subjects"{% if sub.subjects %} checked{% endif %}>
+            {% endfor %}   
+              </div>
+              
+            <div class="col-md-12 mt-3">
+              <label for=""> Email</label>
+              <input
+                type="email"
+                name="email"
+                value="{{s.email}}"
+                class="form-control"
+              />
+            </div>
+            <div class="col-md-12 mt-3">
+              <label for=""> Father's Name</label>
+              <input
+              type="text"
+              name="fathersname"
+              value="{{s.studentname}}"
+              class="form-control"
+            />
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for=""> Mother's Name</label>
+                <input
+                type="text"
+                name="mothersname"
+                value="{{s.studentname}}"
+                class="form-control"
+              />
+              </div>
+     
+            <div class="col-md-12 mt-3">
+              <label for=""> City</label>
+              <input
+                type="text"
+                name="city"
+                value="{{br.city}}"
+                class="form-control"
+              />
+            </div>
+            <div class="col-md-12 mt-3">
+              <label for=""> State</label>
+              <input
+                type="text"
+                name="state"
+                value="{{br.state}}"
+                class="form-control"
+              />
+            </div>
+            <div class="col-md-12 mt-3">
+              <label for=""> Country</label>
+              <input
+                type="text"
+                name="country"
+                value="{{br.country}}"
+                class="form-control"
+              />
+            </div>
+            <div class="col-md-12 mt-3">
+              <label for=""> Pincode</label>
+              <input
+                type="text"
+                name="pincode"
+                value="{{br.pincode}}"
+                class="form-control"
+              />
+            </div>
+
+            <div class="col-md-12 mt-3 mb-3">
+              <button class="btn btn-warning w-100" type="submit">
+                Update
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+{% endblock %}

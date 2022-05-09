@@ -1,0 +1,44 @@
+{% extends 'basetutor.html' %} {% block content %}
+<center>
+  <h2><br>Student Details</h2>
+</center>
+<body>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Student Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Class</th>
+          <th scope="col">Email</th>
+          <th scope="col">Father's Name</th>
+          <th scope="col">Mother's Name</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Country</th>
+          <th scope="col">Pincode</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in use %}
+        <tr>
+          <td scope="row">{{i.studentname}}</td>
+          <td>{{i.phn}}</td>
+          <td>{{i.classs}}</td>
+          <td>{{i.email}}</td>
+          <td>{{i.fathersname}}</td>
+          <td>{{i.mothersname}}</td>
+          <td>{{i.city}}</td>
+          <td>{{i.state}}</td>
+          <td>{{i.country}}</td>
+          <td>{{i.pincode}}</td>
+          <td class="d-flex">
+            
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endblock content %}
+</body>

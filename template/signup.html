@@ -1,0 +1,62 @@
+{% extends 'base.html' %} {% block content %}
+<div class="col-md-12 mt-3">
+  <center><h2>Sign Up</h2></center>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-3">
+      <div class="card p-3">
+        <form action="signup" method="post">
+          {% csrf_token %}
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">First name</label>
+              <input type="text" name="first_name" class="form-control" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Last Name</label>
+              <input type="text" name="last_name" class="form-control" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">Email</label>
+              <input type="email" name="email" class="form-control" />
+            </div>
+            {% comment %} <div class="form-group col-md-6">
+              <label for="designation">Designation</label>
+              <select name="designation" >
+                <option value="admin">Admin</option>
+                <option value="tutor">Tutor</option>
+                <option value="student">Student</option>
+              </select>            
+            </div> {% endcomment %}
+            <div class="form-group col-md-6">
+              <label for="">Username</label>
+              <input type="text" name="username" class="form-control" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="">Password</label>
+              <input type="password" name="password" class="form-control" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="">Confirm Password</label>
+              <input type="password" name="cpassword" class="form-control" />
+            </div>
+            <div class="col-md-12 mb-3 mt-3">
+              <button type="submit" class="btn btn-secondary w-100">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+{% endblock%}

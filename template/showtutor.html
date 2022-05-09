@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<center>
+  <h2>Tutor Details</h2>
+</center>
+<body>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Tutor Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Email</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in use %}
+        <tr>
+          <td scope="row">{{i.firstname}} {{i.lasstname}}</td>
+          <td>{{i.phn}}</td>
+          <td>{{i.email}}</td>
+
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endblock content %}
+</body>

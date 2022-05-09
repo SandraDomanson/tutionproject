@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+<h1>
+  <br />
+  
+  <center>Welcome</center>
+</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 mt-3">
+      <div class="card p-3">
+        <center>
+          <label>Already a member?</label><br />
+          <a href="login_page">
+            <button type="button" class="btn btn-primary">Login</button
+            ><br /> </a
+          ><br />
+          <label>New? Create an Account</label><br />
+          <a href="signuppage">
+            <button type="button" class="btn btn-secondary">Signup</button
+            ><br />
+          </a><br><br>
+         
+
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <a href="stulogin_page">
+                <button class="btn btn-secondary form-control  btn-block">Student Login</button></div>
+                </a>
+              <div class="col">
+                <a href="tutlogin_page">
+                <button  class="btn btn-primary form-control btn-block" >Tutor Login</button></div>
+                </a>
+              </div>
+            </div>
+          </div>
+           </center>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

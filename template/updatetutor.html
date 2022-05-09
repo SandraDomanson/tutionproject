@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 mt-5">
+      <div class="col-md-12 mt-3">
+        <center>
+          <h2>Update Tutor Details</h2>
+        </center>
+      </div>
+      <div class="card p-3">
+        <form
+          action="/updatetutor/{{t.tid}}"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-12 mt-3">
+              <label for="">Tutor Name</label>
+              <input
+                type="text"
+                name="tutorname"
+                value="{{t.tutorname}}"
+                class="form-control"
+              />
+            </div>
+            <div class="col-md-12 mt-3">
+                <label for="">Subject</label>
+                <input
+                  type="text"
+                  name="sub"
+                  value="{{t.sub}}"
+                  class="form-control"
+                />
+              </div>
+            <div class="col-md-12 mt-3">
+              <label for=""> Email</label>
+              <input
+                type="email"
+                name="email"
+                value="{{t.email}}"
+                class="form-control"
+              />
+            </div>
+
+            <div class="col-md-12 mt-3">
+              <label for=""> Phone Number </label>
+              <input
+                type="number"
+                name="phn"
+                value="{{t.phn}}"
+                class="form-control"
+              />
+            </div>
+         
+
+            <div class="col-md-12 mt-3 mb-3">
+              <button class="btn btn-warning w-100" type="submit">
+                Update
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 mt-5">
+        <div class="card p-3">
+          <form
+            method="post"
+            class="post-form"
+            action="userupdate/{{ user.id }}"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div>
+                <h3>MY PROFILE</h3>
+              </div>
+              <div class="col-md-6"></div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <label style="margin-left: 13px">Firstname:</label>
+                <input
+                  class="text-secondary"
+                  type="text"
+                  name="first_name"
+                  value="{{ user.firstname }}"
+                  style="border: 0"
+                  class="form-control"
+                /><br />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <label style="margin-left: 13px">Lastname:</label>
+                <input
+                  class="text-secondary"
+                  type="text"
+                  name="last_name"
+                  value="{{ user.lastname }}"
+                  style="border: 0"
+                  class="form-control"
+                /><br />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <label style="margin-left: 13px">Email:</label>
+                <input
+                  class="text-secondary"
+                  type="email"
+                  name="email"
+                  value="{{ user.email }}"
+                  style="border: 0"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <label style="margin-left: 13px">Username:</label>
+                <input
+                  class="text-secondary"
+                  type="email"
+                  name="email"
+                  value="{{ user.username }}"
+                  style="border: 0"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4 mt-6 d-flex">
+                <a href="{% url 'resetpassword' %}">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary rounded-pill"
+                  >
+                    Update Profile
+                  </button>
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}
